@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EffectsManger : MonoBehaviour
 {
-   private PlayerMovementAdvanced pm;
+   private PlayerStateHandler pm;
     public Animator animator;
     private AudioSource audioSource;
 
@@ -13,7 +13,7 @@ public class EffectsManger : MonoBehaviour
 
     private void Start()
     {
-        pm = GetComponent<PlayerMovementAdvanced>();
+        pm = GetComponent<PlayerStateHandler>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
     }
@@ -29,41 +29,41 @@ public class EffectsManger : MonoBehaviour
         // Update animator parameters based on movement state
         switch (pm.state)
         {
-            case PlayerMovementAdvanced.MovementState.walking:
+            case PlayerStateHandler.MovementState.walking:
                 animator.SetBool("Walking", true);
                 animator.SetBool("Sprinting", false);
                 animator.SetBool("Crouching", false);
                 animator.SetBool("Jumping", false);
                 animator.SetBool("Aiming", false);
                 break;
-            case PlayerMovementAdvanced.MovementState.sprinting:
+            case PlayerStateHandler.MovementState.sprinting:
                 animator.SetBool("Walking", false);
                 animator.SetBool("Sprinting", true);
                 animator.SetBool("Crouching", false);
                 animator.SetBool("Jumping", false);
                 animator.SetBool("Aiming", false);
                 break;
-            case PlayerMovementAdvanced.MovementState.crouching:
+            case PlayerStateHandler.MovementState.crouching:
                 animator.SetBool("Walking", false);
                 animator.SetBool("Sprinting", false);
                 animator.SetBool("Crouching", true);
                 animator.SetBool("Jumping", false);
                 animator.SetBool("Aiming", false);
                 break;
-            case PlayerMovementAdvanced.MovementState.air:
+            case PlayerStateHandler.MovementState.air:
                 animator.SetBool("Walking", false);
                 animator.SetBool("Sprinting", false);
                 animator.SetBool("Crouching", false);
                 animator.SetBool("Jumping", true);
                 break;
-            case PlayerMovementAdvanced.MovementState.aim:
+            case PlayerStateHandler.MovementState.aim:
                 animator.SetBool("Walking", false);
                 animator.SetBool("Sprinting", false);
                 animator.SetBool("Crouching", false);
                 animator.SetBool("Jumping", false);
                 animator.SetBool("Aiming", true);
                 break;
-                  case PlayerMovementAdvanced.MovementState.CantedAim:
+                  case PlayerStateHandler.MovementState.CantedAim:
                 animator.SetBool("Walking", false);
                 animator.SetBool("Sprinting", false);
                 animator.SetBool("Crouching", false);

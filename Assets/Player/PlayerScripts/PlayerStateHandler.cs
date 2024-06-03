@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class PlayerMovementAdvanced : MonoBehaviour
+public class PlayerStateHandler : MonoBehaviour
 {
     [Header("Movement")]
     private float moveSpeed;

@@ -63,14 +63,14 @@ public class MovementPhysics : MonoBehaviour
     public Transform playerObj;
     public CinemachineVirtualCamera playerCam;
     private Rigidbody rb;
-    private PlayerMovementAdvanced pm;
+    private PlayerStateHandler pm;
 
     private CinemachineBasicMultiChannelPerlin camNoise;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        pm = GetComponent<PlayerMovementAdvanced>();
+        pm = GetComponent<PlayerStateHandler>();
 
         startYScale = playerObj.localScale.y;
     }

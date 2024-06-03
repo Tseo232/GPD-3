@@ -39,7 +39,7 @@ public class PlayerShoot : MonoBehaviour
     public CinemachineVirtualCamera cinemachineCam;
     private Camera mainCamera;
     public Transform attackPoint;
-    protected PlayerMovementAdvanced pm;
+    protected PlayerStateHandler pm;
     protected PlayerCam pc;
     public LayerMask aimColliderLayerMask;
 
@@ -58,7 +58,7 @@ public class PlayerShoot : MonoBehaviour
         // Make sure magazine is full
         ammoLeft = magSize;
         readyToShoot = true;
-        pm = GetComponent<PlayerMovementAdvanced>();
+        pm = GetComponent<PlayerStateHandler>();
         mainCamera = Camera.main; // Get the main camera
     }
 

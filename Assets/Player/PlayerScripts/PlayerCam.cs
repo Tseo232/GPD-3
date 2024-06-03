@@ -23,9 +23,7 @@ public class PlayerCam : MonoBehaviour
 
     void Update()
     {
-        if (cinemachineVirtualCamera == null || player == null || cameraPivot == null)
-            return;
-
+       
         rotationX += Input.GetAxis("Mouse X") * sensitivity;
         rotationY -= Input.GetAxis("Mouse Y") * sensitivity;
         rotationY = Mathf.Clamp(rotationY, minY, maxY);

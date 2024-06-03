@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Enemy
   - EnemyBullet
+  - Energy
   layers:
   - Default
   - TransparentFX
