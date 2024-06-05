@@ -54,6 +54,8 @@ public class Menu : MonoBehaviour
         GamePaused= true;
          Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        PLayerUI.SetActive(false);
+
     }
     public void quiteGame()
     {
@@ -62,4 +64,3 @@ public class Menu : MonoBehaviour
     }
 
 }
-     
