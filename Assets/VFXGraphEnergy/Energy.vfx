@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d4c867f6b72b714dbb5fd1780afe208, type: 3}
-  m_Name: Energy
+  m_Name: FlareVFX
   m_EditorClassIdentifier: 
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 0}
@@ -265,9 +265,9 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 25000
+      m_SerializableObject: 50000
     min: 2500
-    max: 25000
+    max: 50000
     enumValues: []
     descendantCount: 0
   - name: Lifetime Min
@@ -396,8 +396,8 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: EnergyContain
-    path: EnergyContain
+  - name: EnergyControl
+    path: EnergyControl
     tooltip: 'how Particles Surround PLayer - =repel + =Attract
 
 '
@@ -407,9 +407,9 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 100
-    min: 0
-    max: 100
+      m_SerializableObject: 0
+    min: -Infinity
+    max: Infinity
     enumValues: []
     descendantCount: 0
   m_ImportDependencies: []
@@ -669,7 +669,7 @@ VisualEffectResource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Energy
+  m_Name: FlareVFX
   m_Graph: {fileID: 114350483966674976}
   m_Infos:
     m_RendererSettings:
@@ -1406,7 +1406,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 119.3
+      m_SerializableObject: 55.75
     m_Space: 2147483647
   m_Property:
     name: Intensity
@@ -2032,7 +2032,7 @@ MonoBehaviour:
     m_Type:
       m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-    m_SerializableObject: 25000
+    m_SerializableObject: 50000
   m_IsOutput: 0
   m_EnumValues: []
   m_ValueFilter: 1
@@ -2070,7 +2070,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 25000
+      m_SerializableObject: 50000
     m_Space: 2147483647
   m_Property:
     name: o
@@ -3828,14 +3828,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614761}
       inputSlot: {fileID: 8926484042661615017}
-    - outputSlot: {fileID: 8926484042661614761}
-      inputSlot: {fileID: 8926484042661614977}
     position: {x: 221.5, y: 1440}
-    expandedSlots: []
-    expanded: 0
-  - m_Id: 1
-    linkedSlots: []
-    position: {x: 451, y: 1491}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614761
@@ -3873,7 +3866,6 @@ MonoBehaviour:
   m_Direction: 1
   m_LinkedSlots:
   - {fileID: 8926484042661615017}
-  - {fileID: 8926484042661614977}
 --- !u!114 &8926484042661614780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5654,7 +5646,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Sphere, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"center":{"x":0.007160682696849108,"y":0.01166184339672327,"z":-0.017527315765619279},"radius":1.0}'
+      m_SerializableObject: '{"center":{"x":0.007160682696849108,"y":0.01166184339672327,"z":-0.017527315765619279},"radius":0.5}'
     m_Space: 0
   m_Property:
     name: Sphere
@@ -5890,7 +5882,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 37.68
+      m_SerializableObject: 5.03
     m_Space: 2147483647
   m_Property:
     name: attractionForce
@@ -5924,7 +5916,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 6.48
+      m_SerializableObject: 10
     m_Space: 2147483647
   m_Property:
     name: stickDistance
@@ -6341,8 +6333,7 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
-  m_LinkedSlots:
-  - {fileID: 8926484042661614761}
+  m_LinkedSlots: []
 --- !u!114 &8926484042661615012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6565,28 +6556,26 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661615021}
-  m_ExposedName: EnergyContain
+  m_ExposedName: EnergyControl
   m_Exposed: 1
   m_Order: 10
   m_Category: 
   m_Min:
     m_Type:
-      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-    m_SerializableObject: 0
+      m_SerializableType: 
+    m_SerializableObject: 
   m_Max:
     m_Type:
-      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-    m_SerializableObject: 100
+      m_SerializableType: 
+    m_SerializableObject: 
   m_IsOutput: 0
   m_EnumValues: []
-  m_ValueFilter: 1
+  m_ValueFilter: 0
   m_Tooltip: 'how Particles Surround PLayer - =repel + =Attract
 
 '
@@ -6623,7 +6612,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 100
+      m_SerializableObject: 0
     m_Space: 2147483647
   m_Property:
     name: o
